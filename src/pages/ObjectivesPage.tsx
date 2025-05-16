@@ -17,7 +17,7 @@ const ObjectivesPage = () => {
             loading="lazy"
           />
           {/* Overlay escura */}
-          <div className="absolute inset-0 bg-gray opacity-50"></div>
+          <div className="absolute inset-0 bg-cover opacity-50"></div>
         </div>
 
         {/* Conteúdo sobreposto */}
