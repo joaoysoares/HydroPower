@@ -6,9 +6,22 @@ import { Link } from 'react-router-dom';
 const ObjectivesPage = () => {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-10 md:pt-40 md:pb-16 bg-secondary-50">
-        <div className="container-custom">
+      {/* Header com imagem de fundo e overlay escura */}
+      <section className="pt-32 pb-10 md:pt-40 md:pb-16 relative text-white overflow-hidden">
+        {/* Imagem de fundo */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://i.postimg.cc/g237RGJ3/Chat-GPT-Image-16-de-mai-de-2025-00-57-25.png"
+            alt="Banner objetivos"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {/* Overlay escura */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+
+        {/* Conteúdo sobreposto */}
+        <div className="container-custom relative z-10 text-center">
           <PageHeader 
             title="Nossos Objetivos"
             subtitle="Conheça as metas que guiam nosso projeto para um futuro mais sustentável"
