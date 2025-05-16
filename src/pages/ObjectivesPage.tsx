@@ -11,7 +11,7 @@ const ObjectivesPage = () => {
         {/* Imagem de fundo */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://i.postimg.cc/g237RGJ3/Chat-GPT-Image-16-de-mai-de-2025-00-57-25.png"
+            src="https://i.postimg.cc/vT3VCg35/Chat-GPT-Image-16-de-mai-de-2025-01-09-06.png"
             alt="Banner objetivos"
             className="w-full h-full object-cover"
             loading="lazy"
