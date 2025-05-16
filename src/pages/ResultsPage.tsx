@@ -5,9 +5,22 @@ import Card from '../components/Card';
 const ResultsPage = () => {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-10 md:pt-40 md:pb-16 bg-gradient-to-r from-primary-50 to-secondary-50">
-        <div className="container-custom">
+      {/* Header com imagem de fundo e overlay escura */}
+      <section className="pt-32 pb-10 md:pt-40 md:pb-16 relative text-white overflow-hidden">
+        {/* Imagem de fundo */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://i.postimg.cc/8zCHkDv1/Chat-GPT-Image-16-de-mai-de-2025-01-06-29.png"
+            alt="Banner resultados"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {/* Overlay escura */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+
+        {/* Conteúdo sobreposto */}
+        <div className="container-custom relative z-10 text-center">
           <PageHeader 
             title="Resultados Esperados"
             subtitle="Conheça os impactos positivos que buscamos alcançar com nossa plataforma de gestão sustentável de recursos hídricos"
