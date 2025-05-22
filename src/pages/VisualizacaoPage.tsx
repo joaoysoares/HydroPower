@@ -20,7 +20,7 @@ const VisualizacaoPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-xl font-semibold mb-4">Água Recuperada</h2>
-          <p className="text-2xl font-bold text-primary-600">2,850 L/dia</p>
+          <p className="text-2xl font-bold text-primary-600">2.850 L/dia</p>
           <p className="text-sm text-gray-500">Volume médio de água tratada e reutilizada</p>
           <div className="mt-2 h-2 bg-gray-200 rounded-full">
             <div className="h-2 bg-green-500 rounded-full" style={{width: '78%'}}></div>
@@ -30,7 +30,7 @@ const VisualizacaoPage = () => {
         
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-xl font-semibold mb-4">Energia Solar Gerada</h2>
-          <p className="text-2xl font-bold text-primary-600">48.2 kWh/dia</p>
+          <p className="text-2xl font-bold text-primary-600">48,2 kWh/dia</p>
           <p className="text-sm text-gray-500">Suficiente para 6 residências médias</p>
           <div className="mt-2 h-2 bg-gray-200 rounded-full">
             <div className="h-2 bg-yellow-400 rounded-full" style={{width: '65%'}}></div>
@@ -40,7 +40,7 @@ const VisualizacaoPage = () => {
         
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-xl font-semibold mb-4">Energia Eólica Gerada</h2>
-          <p className="text-2xl font-bold text-primary-600">32.7 kWh/dia</p>
+          <p className="text-2xl font-bold text-primary-600">32,7 kWh/dia</p>
           <p className="text-sm text-gray-500">Complementando o sistema solar</p>
           <div className="mt-2 h-2 bg-gray-200 rounded-full">
             <div className="h-2 bg-blue-400 rounded-full" style={{width: '45%'}}></div>
@@ -73,11 +73,11 @@ const VisualizacaoPage = () => {
           <ul className="space-y-2">
             <li className="flex justify-between">
               <span>pH da água tratada:</span>
-              <span className="font-semibold">7.2 (ideal)</span>
+              <span className="font-semibold">7,2 (ideal)</span>
             </li>
             <li className="flex justify-between">
               <span>Turvação (NTU):</span>
-              <span className="font-semibold">2.1</span>
+              <span className="font-semibold">2,1</span>
             </li>
             <li className="flex justify-between">
               <span>Eficiência do tratamento:</span>
@@ -95,7 +95,7 @@ const VisualizacaoPage = () => {
           <li>Resfriamento de painéis solares com água reutilizada</li>
           <li>Geração combinada solar-eólica</li>
         </ul>
-        <p>O retorno sobre o investimento (ROI) estimado é de <span className="font-semibold">4.2 anos</span>.</p>
+        <p>O retorno sobre o investimento (ROI) estimado é de <span className="font-semibold">4,2 anos</span>.</p>
       </div>
 
       <img 
