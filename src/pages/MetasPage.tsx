@@ -96,7 +96,7 @@ const MetasPage = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
             <img 
-              src="https://i.postimg.cc/3N8b5z0Y/water-energy-goals-chart.png" 
+              src="https://iili.io/3ZIiodb.png" 
               alt="Gráfico de progresso de metas sustentáveis" 
               className="w-full rounded-lg"
             />
