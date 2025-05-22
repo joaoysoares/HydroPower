@@ -87,7 +87,7 @@ const ApisPage = () => {
       <div className="bg-white p-6 rounded-lg shadow">
         <h3 className="text-lg font-semibold mb-4">Fluxo de Dados do Sistema</h3>
         <img 
-          src="https://i.postimg.cc/8z1kQd0J/water-energy-dashboard.png" 
+          src="https://iili.io/3ZT2t9V.md.png" 
           alt="Diagrama de integração de APIs" 
           className="w-full rounded-lg mb-4"
         />
