@@ -1,49 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import { systemData } from '../data/sustainableData';
 
 const MetasPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const filterIds = location.state?.filterIds;
-
-  // Dados das metas (pode vir de uma API no futuro)
-  const metas = [
-    {
-      id: 1,
-      titulo: "Reduzir consumo de água potável em 30%",
-      descricao: "Meta baseada na capacidade máxima do sistema de reúso",
-      progresso: 65,
-      status: "andamento",
-      prazo: "Dez/2024",
-      economiaEstimada: "12.000 L/mês"
-    },
-    {
-      id: 2,
-      titulo: "Atingir 90% de eficiência no tratamento de água",
-      descricao: "Melhoria contínua do sistema de filtragem",
-      progresso: 92,
-      status: "concluido",
-      prazo: "Ago/2024",
-      impacto: "Água própria para resfriamento de equipamentos"
-    },
-    {
-      id: 3,
-      titulo: "Compensar 100% da energia utilizada",
-      descricao: "Através da geração solar+eólica integrada",
-      progresso: 78,
-      status: "andamento",
-      prazo: "Mar/2025",
-      geracaoAtual: "85 kWh/dia"
-    },
-    {
-      id: 4,
-      titulo: "Reduzir custos operacionais em 25%",
-      descricao: "Otimização do sistema integrado",
-      progresso: 35,
-      status: "andamento",
-      prazo: "Jun/2025",
-      economiaAtual: "R$ 1.850/mês"
-    }
-  ];
 
   const getStatusColor = (status) => {
     switch(status) {
@@ -77,56 +38,59 @@ const MetasPage = () => {
         Objetivos mensuráveis para otimização do sistema integrado de reúso hídrico e energia renovável.
       </p>
 
-      {/* Lista de metas com filtro aplicado */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {metas
-          .filter(meta => !filterIds || filterIds.includes(meta.id))
-          .map((meta) => (
-            <div key={meta.id} className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary-500">
+        {systemData.goals
+          .filter(goal => !filterIds || filterIds.includes(goal.id))
+          .map((goal) => (
+            <div key={goal.id} className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary-500">
               <div className="flex justify-between items-start">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{meta.titulo}</h3>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(meta.status)}`}>
-                  {getStatusText(meta.status)}
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{goal.title}</h3>
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(goal.status)}`}>
+                  {getStatusText(goal.status)}
                 </span>
               </div>
               
-              <p className="text-sm text-gray-600 mb-3">{meta.descricao}</p>
+              <p className="text-sm text-gray-600 mb-3">{goal.description}</p>
               
               <div className="mb-3">
                 <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>Progresso: {meta.progresso}%</span>
-                  <span>Prazo: {meta.prazo}</span>
+                  <span>Progresso: {goal.progress}%</span>
+                  <span>Prazo: {goal.deadline}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
                   <div 
                     className={`h-2.5 rounded-full ${
-                      meta.status === 'concluido' ? 'bg-green-500' : 
-                      meta.status === 'andamento' ? 'bg-blue-500' : 'bg-gray-300'
+                      goal.status === 'concluido' ? 'bg-green-500' : 
+                      goal.status === 'andamento' ? 'bg-blue-500' : 'bg-gray-300'
                     }`} 
-                    style={{width: `${meta.progresso}%`}}
+                    style={{width: `${goal.progress}%`}}
                   ></div>
                 </div>
               </div>
               
               <div className="text-sm">
-                {meta.economiaEstimada && (
-                  <p className="text-gray-700"><span className="font-medium">Economia estimada:</span> {meta.economiaEstimada}</p>
+                {goal.id === 1 && (
+                  <p className="text-gray-700">
+                    <span className="font-medium">Economia atual:</span> {systemData.water.saved.toLocaleString()} L/mês
+                  </p>
                 )}
-                {meta.geracaoAtual && (
-                  <p className="text-gray-700"><span className="font-medium">Geração atual:</span> {meta.geracaoAtual}</p>
+                {goal.id === 3 && (
+                  <p className="text-gray-700">
+                    <span className="font-medium">Geração atual:</span> {systemData.energy.solar.generation + systemData.energy.wind.generation} kWh/dia
+                  </p>
                 )}
-                {meta.economiaAtual && (
-                  <p className="text-gray-700"><span className="font-medium">Redução de custos:</span> {meta.economiaAtual}</p>
-                )}
-                {meta.impacto && (
-                  <p className="text-gray-700"><span className="font-medium">Impacto:</span> {meta.impacto}</p>
-                )}
+                
+                <button 
+                  onClick={() => navigate('/apis', { state: { relatedTo: goal.relatedApis } })}
+                  className="mt-2 text-xs text-primary-600 hover:text-primary-800"
+                >
+                  Ver APIs relacionadas →
+                </button>
               </div>
             </div>
-        ))}
+          ))}
       </div>
 
-      {/* Gráfico de progresso das metas */}
       <div className="bg-white p-6 rounded-lg shadow">
         <h3 className="text-xl font-semibold mb-6 text-center">Progresso Geral das Metas</h3>
         <div className="flex flex-col md:flex-row items-center">
@@ -143,44 +107,33 @@ const MetasPage = () => {
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                 <div>
                   <p className="font-medium">Metas concluídas</p>
-                  <p className="text-sm text-gray-600">2 de 4 metas principais</p>
+                  <p className="text-sm text-gray-600">
+                    {systemData.goals.filter(g => g.status === 'concluido').length} de {systemData.goals.length} metas
+                  </p>
                 </div>
               </li>
               <li className="flex items-center">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
                 <div>
                   <p className="font-medium">Em andamento</p>
-                  <p className="text-sm text-gray-600">70% de progresso médio</p>
+                  <p className="text-sm text-gray-600">
+                    {Math.round(systemData.goals.filter(g => g.status === 'andamento').reduce((acc, goal) => acc + goal.progress, 0) / 
+                    systemData.goals.filter(g => g.status === 'andamento').length || 0}% de progresso médio
+                  </p>
                 </div>
               </li>
               <li className="flex items-center">
                 <div className="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
                 <div>
                   <p className="font-medium">Impacto acumulado</p>
-                  <p className="text-sm text-gray-600">18.500 litros reutilizados</p>
-                </div>
-              </li>
-              <li className="flex items-center">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                <div>
-                  <p className="font-medium">Economia financeira</p>
-                  <p className="text-sm text-gray-600">R$ 8.240 desde o início</p>
+                  <p className="text-sm text-gray-600">
+                    {systemData.water.saved.toLocaleString()} litros reutilizados
+                  </p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-
-      {/* Seção de próximos passos */}
-      <div className="mt-12 bg-primary-50 p-6 rounded-lg border border-primary-100">
-        <h3 className="text-lg font-semibold text-primary-800 mb-3">Próximas Etapas</h3>
-        <ul className="list-disc pl-5 space-y-2 text-primary-700">
-          <li>Implementar sistema de monitoramento em tempo real</li>
-          <li>Expandir capacidade de armazenamento de água tratada</li>
-          <li>Integrar mais 2 turbinas eólicas ao sistema</li>
-          <li>Otimizar horários de operação com base em dados históricos</li>
-        </ul>
       </div>
     </section>
   );
