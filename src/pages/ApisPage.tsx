@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { systemData } from '../data/sustainableData';
 
 const ApisPage = () => {
@@ -51,7 +51,8 @@ const ApisPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {systemData.apis
           .filter(api => !relatedTo || relatedTo.some(goalId => 
-            systemData.goals.find(g => g.id === goalId)?.relatedApis.includes(api.id))
+            systemData.goals.find(g => g.id === goalId)?.relatedApis.includes(api.id)
+          ))
           .map((api) => {
             const relatedGoals = systemData.goals.filter(goal => goal.relatedApis.includes(api.id));
             
