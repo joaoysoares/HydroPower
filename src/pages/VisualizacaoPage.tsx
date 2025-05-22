@@ -100,7 +100,7 @@ const VisualizacaoPage = () => {
       </div>
 
       <img 
-        src="https://i.postimg.cc/Rhz97gm0/grafico-linhas.png" 
+        src="" 
         alt="Gráfico de desempenho do sistema" 
         className="w-full max-w-4xl mx-auto rounded-lg shadow" 
       />
