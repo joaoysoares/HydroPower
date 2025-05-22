@@ -6,9 +6,8 @@ const ApisPage = () => {
   const location = useLocation();
   const relatedTo = location.state?.relatedTo;
 
-  // Navega para a página de metas com filtro
   const verMetasRelacionadas = (metaIds) => {
-    navigate('/metas', { state: { filterIds: metaIds } });
+    navigate('/objetivos/metas', { state: { filterIds: metaIds } });
   };
 
   const getStatusBadge = (status) => {
@@ -88,7 +87,7 @@ const ApisPage = () => {
       <div className="bg-white p-6 rounded-lg shadow">
         <h3 className="text-lg font-semibold mb-4">Fluxo de Dados do Sistema</h3>
         <img 
-          src="https://iili.io/3ZT2t9V.md.png" 
+          src="https://i.postimg.cc/8z1kQd0J/water-energy-dashboard.png" 
           alt="Diagrama de integração de APIs" 
           className="w-full rounded-lg mb-4"
         />
