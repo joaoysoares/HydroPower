@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 const MetasPage = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
   // Dados das metas (pode vir de uma API no futuro)
   const metas = [
