@@ -81,7 +81,7 @@ const MetasPage = () => {
                 )}
                 
                 <button 
-                  onClick={() => navigate('/apis', { state: { relatedTo: goal.relatedApis } })}
+                  onClick={() => navigate('/objetivos/apis', { state: { relatedTo: goal.relatedApis } })}
                   className="mt-2 text-xs text-primary-600 hover:text-primary-800"
                 >
                   Ver APIs relacionadas →
@@ -96,7 +96,7 @@ const MetasPage = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
             <img 
-              src="https://iili.io/3ZIiodb.png" 
+              src="https://i.postimg.cc/3N8b5z0Y/water-energy-goals-chart.png" 
               alt="Gráfico de progresso de metas sustentáveis" 
               className="w-full rounded-lg"
             />
@@ -118,7 +118,7 @@ const MetasPage = () => {
                   <p className="font-medium">Em andamento</p>
                   <p className="text-sm text-gray-600">
                     {Math.round(systemData.goals.filter(g => g.status === 'andamento').reduce((acc, goal) => acc + goal.progress, 0) / 
-                    (systemData.goals.filter(g => g.status === 'andamento').length || 0))}% de progresso médio
+                    (systemData.goals.filter(g => g.status === 'andamento').length || 1))}% de progresso médio
                   </p>
                 </div>
               </li>
