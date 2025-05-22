@@ -1,16 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-// Adicione no início da página MetasPage (após os imports):
-const location = useLocation();
-const filterIds = location.state?.filterIds;
-
-// Modifique a exibição das metas para filtrar quando necessário
-{metas
-  .filter(meta => !filterIds || filterIds.includes(meta.id))
-  .map((meta) => (
-    // ... resto do código do card de meta
-))}
-
 const MetasPage = () => {
   const navigate = useNavigate();
 
