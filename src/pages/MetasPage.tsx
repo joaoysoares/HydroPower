@@ -1,7 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const MetasPage = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const filterIds = location.state?.filterIds;
 
   // Dados das metas (pode vir de uma API no futuro)
   const metas = [
@@ -75,50 +77,52 @@ const navigate = useNavigate();
         Objetivos mensuráveis para otimização do sistema integrado de reúso hídrico e energia renovável.
       </p>
 
-      {/* Lista de metas aprimorada */}
+      {/* Lista de metas com filtro aplicado */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {metas.map((meta) => (
-          <div key={meta.id} className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary-500">
-            <div className="flex justify-between items-start">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{meta.titulo}</h3>
-              <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(meta.status)}`}>
-                {getStatusText(meta.status)}
-              </span>
-            </div>
-            
-            <p className="text-sm text-gray-600 mb-3">{meta.descricao}</p>
-            
-            <div className="mb-3">
-              <div className="flex justify-between text-sm text-gray-600 mb-1">
-                <span>Progresso: {meta.progresso}%</span>
-                <span>Prazo: {meta.prazo}</span>
+        {metas
+          .filter(meta => !filterIds || filterIds.includes(meta.id))
+          .map((meta) => (
+            <div key={meta.id} className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary-500">
+              <div className="flex justify-between items-start">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{meta.titulo}</h3>
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(meta.status)}`}>
+                  {getStatusText(meta.status)}
+                </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div 
-                  className={`h-2.5 rounded-full ${
-                    meta.status === 'concluido' ? 'bg-green-500' : 
-                    meta.status === 'andamento' ? 'bg-blue-500' : 'bg-gray-300'
-                  }`} 
-                  style={{width: `${meta.progresso}%`}}
-                ></div>
+              
+              <p className="text-sm text-gray-600 mb-3">{meta.descricao}</p>
+              
+              <div className="mb-3">
+                <div className="flex justify-between text-sm text-gray-600 mb-1">
+                  <span>Progresso: {meta.progresso}%</span>
+                  <span>Prazo: {meta.prazo}</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div 
+                    className={`h-2.5 rounded-full ${
+                      meta.status === 'concluido' ? 'bg-green-500' : 
+                      meta.status === 'andamento' ? 'bg-blue-500' : 'bg-gray-300'
+                    }`} 
+                    style={{width: `${meta.progresso}%`}}
+                  ></div>
+                </div>
+              </div>
+              
+              <div className="text-sm">
+                {meta.economiaEstimada && (
+                  <p className="text-gray-700"><span className="font-medium">Economia estimada:</span> {meta.economiaEstimada}</p>
+                )}
+                {meta.geracaoAtual && (
+                  <p className="text-gray-700"><span className="font-medium">Geração atual:</span> {meta.geracaoAtual}</p>
+                )}
+                {meta.economiaAtual && (
+                  <p className="text-gray-700"><span className="font-medium">Redução de custos:</span> {meta.economiaAtual}</p>
+                )}
+                {meta.impacto && (
+                  <p className="text-gray-700"><span className="font-medium">Impacto:</span> {meta.impacto}</p>
+                )}
               </div>
             </div>
-            
-            <div className="text-sm">
-              {meta.economiaEstimada && (
-                <p className="text-gray-700"><span className="font-medium">Economia estimada:</span> {meta.economiaEstimada}</p>
-              )}
-              {meta.geracaoAtual && (
-                <p className="text-gray-700"><span className="font-medium">Geração atual:</span> {meta.geracaoAtual}</p>
-              )}
-              {meta.economiaAtual && (
-                <p className="text-gray-700"><span className="font-medium">Redução de custos:</span> {meta.economiaAtual}</p>
-              )}
-              {meta.impacto && (
-                <p className="text-gray-700"><span className="font-medium">Impacto:</span> {meta.impacto}</p>
-              )}
-            </div>
-          </div>
         ))}
       </div>
 
