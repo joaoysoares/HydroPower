@@ -118,7 +118,7 @@ const MetasPage = () => {
                   <p className="font-medium">Em andamento</p>
                   <p className="text-sm text-gray-600">
                     {Math.round(systemData.goals.filter(g => g.status === 'andamento').reduce((acc, goal) => acc + goal.progress, 0) / 
-                    systemData.goals.filter(g => g.status === 'andamento').length || 0}% de progresso médio
+                    (systemData.goals.filter(g => g.status === 'andamento').length || 0))}% de progresso médio
                   </p>
                 </div>
               </li>
