@@ -1,5 +1,12 @@
 # 🌊 HydroPower
 
+### 👥 Integrantes
+- João Paulo Soares Amancio Filho  
+- Renato Galli Barbosa Giglio  
+- João Paulo Miranda da Silva  
+
+---
+
 **HydroPower** é uma plataforma digital **interativa e educativa** desenvolvida com o objetivo de **conscientizar as pessoas sobre a importância da reutilização da água** em sistemas de **energia sustentável**, especialmente nas áreas **solar e eólica**.
 
 A proposta do projeto é destacar **boas práticas**, **benefícios ambientais** e **novas possibilidades de inovação** que possam contribuir para um **futuro energético mais eficiente e responsável**.
@@ -17,3 +24,10 @@ O projeto foi desenvolvido com o auxílio da plataforma **Bolt.new**, que utiliz
 - ⚙️ **Node.js** — para execução do backend e rotas de API  
 - 🔥 **Firebase** (opcional) — para autenticação, banco de dados e hospedagem  
 - 🧩 **Vercel** — para deploy contínuo e integração direta com GitHub  
+
+---
+
+## 🧠 Como Executar o Projeto Localmente
+
+Basta acessar o link: 
+
