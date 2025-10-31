@@ -29,5 +29,5 @@ O projeto foi desenvolvido com o auxílio da plataforma **Bolt.new**, que utiliz
 
 ## 🧠 Como Executar o Projeto Localmente
 
-Basta acessar o link: 
+Basta acessar o link: https://hydropoweraf.netlify.app
 
