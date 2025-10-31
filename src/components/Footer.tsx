@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/joaoysoares/HydroPower" 
+                href="" 
                 className="text-gray-400 hover:text-primary-500 transition-colors duration-300"
                 aria-label="Github"
               >
