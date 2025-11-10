@@ -79,10 +79,22 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
               Sobre o Projeto
             </NavLink>
             <NavLink 
-              to="/objetivos" 
+              to="/dashboard" 
               className={({ isActive }) => navLinkClass(isScrolled, isActive)}
             >
-              Objetivos
+              Dashboard
+            </NavLink>
+            <NavLink 
+              to="/metas-sustentaveis" 
+              className={({ isActive }) => navLinkClass(isScrolled, isActive)}
+            >
+              Metas ODS
+            </NavLink>
+            <NavLink 
+              to="/integracoes" 
+              className={({ isActive }) => navLinkClass(isScrolled, isActive)}
+            >
+              Integrações
             </NavLink>
             <NavLink 
               to="/resultados" 
@@ -128,11 +140,25 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
             Sobre o Projeto
           </NavLink>
           <NavLink 
-            to="/objetivos" 
+            to="/dashboard" 
             className={({ isActive }) => navLinkClass(true, isActive)}
             onClick={closeMenu}
           >
-            Objetivos
+            Dashboard
+          </NavLink>
+          <NavLink 
+            to="/metas-sustentaveis" 
+            className={({ isActive }) => navLinkClass(true, isActive)}
+            onClick={closeMenu}
+          >
+            Metas ODS
+          </NavLink>
+          <NavLink 
+            to="/integracoes" 
+            className={({ isActive }) => navLinkClass(true, isActive)}
+            onClick={closeMenu}
+          >
+            Integrações
           </NavLink>
           <NavLink 
             to="/resultados" 

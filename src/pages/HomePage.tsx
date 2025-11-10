@@ -56,12 +56,12 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="card p-6 flex flex-col h-full bg-white rounded-xl shadow">
-              <h3 className="heading-md mb-4">Sobre o Projeto</h3>
+              <h3 className="heading-md mb-4">Dashboard Interativo</h3>
               <p className="text-gray-800 mb-6 flex-grow">
-                Conheça a visão, missão e os princípios que norteiam nossa plataforma de sustentabilidade hídrica.
+                Visualize dados em tempo real sobre consumo de água, geração de energia e indicadores de sustentabilidade.
               </p>
               <Link
-                to="/sobre"
+                to="/dashboard"
                 className="group flex items-center text-primary-600 font-medium hover:text-primary-700"
               >
                 Saiba mais
@@ -71,12 +71,12 @@ const HomePage = () => {
 
             {/* Card 2 */}
             <div className="card p-6 flex flex-col h-full bg-white rounded-xl shadow">
-              <h3 className="heading-md mb-4">Objetivos</h3>
+              <h3 className="heading-md mb-4">Metas Sustentáveis</h3>
               <p className="text-gray-800 mb-6 flex-grow">
-                Descubra os objetivos gerais e específicos da nossa solução para o monitoramento e reúso inteligente da água.
+                Acompanhe nosso progresso em direção aos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.
               </p>
               <Link
-                to="/objetivos"
+                to="/metas-sustentaveis"
                 className="group flex items-center text-primary-600 font-medium hover:text-primary-700"
               >
                 Saiba mais
@@ -86,12 +86,12 @@ const HomePage = () => {
 
             {/* Card 3 */}
             <div className="card p-6 flex flex-col h-full bg-white rounded-xl shadow">
-              <h3 className="heading-md mb-4">Resultados Esperados</h3>
+              <h3 className="heading-md mb-4">Integrações com APIs</h3>
               <p className="text-gray-800 mb-6 flex-grow">
-                Conheça os impactos positivos e transformações que nossa plataforma irá proporcionar para a sustentabilidade.
+                Conecte-se com fontes de dados externas para monitoramento climático, energético e de recursos hídricos.
               </p>
               <Link
-                to="/resultados"
+                to="/integracoes"
                 className="group flex items-center text-primary-600 font-medium hover:text-primary-700"
               >
                 Saiba mais
