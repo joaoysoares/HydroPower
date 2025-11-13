@@ -41,14 +41,10 @@ git clone https://github.com/soaresy/HydroPower.git
 cd HydroPower
 
 # 3. Instale as dependências necessárias
-npm install
-# ou
-yarn install
+npm install ou yarn install
 
 # 4. Inicie o servidor de desenvolvimento
-npm run dev
-# ou
-yarn dev
+npm run dev ou yarn dev
 
 # 5. Abra o navegador e acesse:
 http://localhost:3000
