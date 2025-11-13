@@ -1,5 +1,5 @@
 # 🌊 HydroPower
-##Solução digital para o reúso inteligente da água em sistemas sustentáveis
+## Solução digital para o reúso inteligente da água em sistemas sustentáveis
 
 ### 👥 Integrantes
 - João Paulo Soares Amancio Filho  
