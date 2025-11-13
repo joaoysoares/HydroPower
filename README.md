@@ -29,5 +29,27 @@ O projeto foi desenvolvido com o auxílio da plataforma **Bolt.new**, que utiliz
 
 ## 🧠 Como Executar o Projeto Localmente
 
-Basta acessar o link: https://hydropoweraf.netlify.app
+Você pode acessar o projeto online pelo link:
+👉 https://hydropoweraf.netlify.app
+
+Ou, se preferir rodar o projeto localmente em sua máquina, siga os passos abaixo:
+
+# 1. Clone este repositório
+git clone https://github.com/soaresy/HydroPower.git
+
+# 2. Acesse a pasta do projeto
+cd HydroPower
+
+# 3. Instale as dependências necessárias
+npm install
+# ou
+yarn install
+
+# 4. Inicie o servidor de desenvolvimento
+npm run dev
+# ou
+yarn dev
+
+# 5. Abra o navegador e acesse:
+http://localhost:3000
 
